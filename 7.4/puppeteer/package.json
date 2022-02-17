@@ -11,6 +11,6 @@
   "dependencies": {
     "jest": "^27.3.1",
     "jest-puppeteer": "^6.0.0",
-    "puppeteer": "^11.0.0"
+    "puppeteer": "^13.3.2"
   }
 }
