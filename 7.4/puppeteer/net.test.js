@@ -2,42 +2,33 @@ let page;
 
 beforeEach(async () => {
   page = await browser.newPage();
-  await page.goto("https://netology.ru");
+  await page.goto("https://github.com/team");
 });
 
 afterEach(() => {
   page.close();
 });
 
-describe("Netology.ru tests", () => {
-  test("The first test'", async () => {
-    const title = await page.title();
-    console.log("Page title: " + title);
-    const firstLink = await page.$("header a + a");
-    // const firstLinkText = await page.$eval(
-    //   "header a + a",
-    //   (link) => link.textContent
-    // );
+describe("Github page tests", () => {
+  test("The h1 header content'", async () => {
+    const firstLink = await page.$("header div div a");
     await firstLink.click();
-    await page.waitForNavigation();
+    await page.waitForSelector('h1');
     const title2 = await page.title();
-    console.log("Page title: " + title2);
-    const pageList = await browser.newPage();
-    await pageList.goto("https://netology.ru/navigation");
-    await pageList.waitForSelector("h1");
+    expect(title2).toEqual('GitHub: Where the world builds software · GitHub');
   });
 
-  test("The first link text 'Медиа Нетологии'", async () => {
-    const actual = await page.$eval("header a + a", (link) => link.textContent);
-    expect(actual).toContain("Медиа Нетологии");
+  test("The first link attribute", async () => {
+    const actual = await page.$eval("a", link => link.getAttribute('href') );
+    expect(actual).toEqual("#start-of-content");
   });
 
-  test("The first link leads on 'Медиа' page", async () => {
-    await page.click("header a + a");
-    await page.waitForSelector(".logo__media", {
+  test("The page contains Sign in button", async () => {
+    const btnSelector = ".btn-large-mktg.btn-mktg";
+    await page.waitForSelector(btnSelector, {
       visible: true,
     });
-    const actual = await page.$eval(".logo__media", (link) => link.textContent);
-    expect(actual).toContain("Медиа");
+    const actual = await page.$eval(btnSelector, link => link.textContent);
+    expect(actual).toContain("Sign up for free")
   });
 });
