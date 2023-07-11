@@ -1,6 +1,6 @@
 ## Создание и хранение книг
 
-Запуск: npm -i, npm start, npm run server
+Запуск: npm install, npm start, npm run server
 
 Тестовые аккаунты: 
    mail: 'bropet@mail.ru', pass: '123'
