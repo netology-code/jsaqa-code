@@ -1,12 +1,14 @@
 let page;
+beforeEach(async () => {
+  page = await browser.newPage();
+});
 
+afterEach(() => {
+  page.close();
+});
 describe("Github/team page tests", () => {
   beforeEach(async () => {
-    page = await browser.newPage();
     await page.goto("https://github.com/team");
-  });
-  afterEach(() => {
-    page.close();
   });
   test("The h1 header content'", async () => {
     const firstLink = await page.$("header div div a");
@@ -35,11 +37,7 @@ describe("Github/team page tests", () => {
 });
 describe("Github page tests", () => {
   beforeEach(async () => {
-    page = await browser.newPage();
     await page.goto("https://github.com");
-  });
-  afterEach(() => {
-    page.close();
   });
   test("Github headers Sing Up check", async () => {
     const singUpLink = await page.$(
