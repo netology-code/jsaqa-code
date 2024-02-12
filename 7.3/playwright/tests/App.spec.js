@@ -20,9 +20,9 @@ test('testCorrectLogin', async ({page}) => {
     page.waitForNavigation(),
     page.click('[data-testid="login-submit-btn"]')
   ]);
-
-  // Check for the presence of menu-userface after navigation
-  await expect(page.locator('[data-testid=menu-userface]')).toBeVisible();
+  await page.waitForTimeout(5000);
+  const title = await page.title();
+  expect(title).toBe('Мои программы обучения');
 
 });
 
@@ -41,8 +41,7 @@ test("testIncorrectLogin", async ({page})=>{
 
   // Click login button
   await Promise.all([
-    page.waitForNavigation(),
     page.click('[data-testid="login-submit-btn"]')
   ]);
-  await expect(page.locator('[data-testid=menu-userface]')).toBeVisible();
+  await expect(page.locator('[data-testid=login-error-hint]')).toBeVisible();
 });
