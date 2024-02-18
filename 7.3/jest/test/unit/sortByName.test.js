@@ -15,3 +15,18 @@ describe("Books names test suit", () => {
     ]);
   });
 });
+describe("Books equal names test suit", () => {
+  it("Books names should not be sorted in ascending order", () => {
+    expect(
+      sorting.sortByName([
+        "Гарри Поттер",
+        "Властелин Колец",
+        "Гарри Поттер",
+      ])
+    ).toEqual([
+      "Властелин Колец",
+      "Гарри Поттер",
+      "Гарри Поттер",
+    ]);
+  });
+});
