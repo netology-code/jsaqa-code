@@ -10,8 +10,23 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
+ Cypress.Commands.add('login', (mail, password) => {
+    const selectors = require("../fixtures/selectors");
+    
+    if(mail) {
+        cy.get(selectors.emailField).type(mail);
+    }
+    if(password) {
+        cy.get(selectors.passwordField).type(password);
+    }
+    cy.get(selectors.loginButton).click();
+   // cy.contains("Добро пожаловать " + mail).should("be.visible");
+    
+ })
+//  Cypress.Commands.add('validationMessage', (mail, Message) => {
+   
+//  })
+// 
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
