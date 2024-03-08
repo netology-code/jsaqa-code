@@ -33,8 +33,8 @@ describe("Working with the user interface", () => {
   it("Try to book a reserved seat",() => {
     cy.get(selectors.pageNav).click();
     cy.get(selectors.movie).first().contains("12:00").click();
-    cy.get(':nth-child(5) > :nth-child(8)').click();
-    cy.get('.acceptin-button').should('be.disabled');
+    cy.get(`${selectors.child2}(5) > ${selectors.child2}(8)`).click();
+    cy.get(selectors.acceptinButton).should('be.disabled');
   });
 });
 

@@ -16,6 +16,7 @@
   "acceptinButton": ".acceptin-button",
 
   "child": "> :nth-child",
+  "child2": ":nth-child",
 
   "messageAboutSelectedTickets": "Вы выбрали билеты",
 
