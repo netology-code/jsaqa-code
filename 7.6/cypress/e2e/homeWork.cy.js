@@ -1,5 +1,4 @@
 const { test, bropet } = require("./users");
-const { desktop, laptop } = require("./screen");
 
 const title = "Гарри Поттер и философский камень";
 const description =
@@ -8,10 +7,7 @@ const authors = "Джоан Роулинг";
 
 beforeEach(() => {
   cy.visit("/");
-  // cy.viewport(desktop.width, desktop.height);
-  // cy.viewport(laptop.width, laptop.height);
-  cy.viewport("iphone-6");
-  // cy.viewport('macbook-13');
+
 });
 
 it("First test", () => {
@@ -52,18 +48,6 @@ describe("My tests", () => {
     cy.contains("Submit").click();
 
     cy.contains(".mt-3", title).should("be.visible");
-
-    /* не работает
-    //Проверяем, существует ли книга с указанным названием
-     if (cy.contains('.mt-3', title).should('exist')) {
-       return;
-     } else {
-      cy.get(".p-0 > .btn").click();
-      cy.get("#title").type(title);
-      cy.get("#description").type(description);
-      cy.get("#authors").type(authors);
-      cy.contains("Submit").click();
-     }*/
   });
 
   it("checking the created book in the library", () => {

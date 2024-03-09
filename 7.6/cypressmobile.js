@@ -3,7 +3,7 @@ module.exports = {
   retries: 2,
   e2e: {
     baseUrl: "http://localhost:3000",
-    viewportWidth: 1366,
-    viewportHeight: 768,
+    viewportWidth: 375,
+    viewportHeight: 667,
   },
 };
