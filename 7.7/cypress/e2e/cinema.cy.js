@@ -30,11 +30,11 @@ describe("Working with the user interface", () => {
     });
   });
 
-  it("Try to book a reserved seat",() => {
+  it("Try to book a reserved seat", () => {
     cy.get(selectors.pageNav).click();
     cy.get(selectors.movie).first().contains("12:00").click();
     cy.get(`${selectors.child2}(5) > ${selectors.child2}(8)`).click();
-    cy.get(selectors.acceptinButton).should('be.disabled');
+    cy.get(selectors.acceptinButton).should("be.disabled");
   });
 });
 
@@ -55,5 +55,29 @@ describe("Login to admin page", () => {
       cy.login(invalid.username, invalid.password);
     });
     cy.contains(selectors.errorMessage).should("be.visible");
+  });
+
+  it("Getting a movie from the admin panel", () => {
+    cy.fixture("login").then(() => {
+      cy.login(valid.username, valid.password);
+    });
+    cy.get(selectors.getMovie)
+      .then(($el) => $el.textContent)
+      .should("have.text", "Унесенные ветром.");
+    cy.get(selectors.getMovie)
+      .invoke("text")
+      .then((text) => {
+        cy.visit("/");
+        cy.wait(1000);
+        cy.get(selectors.pageNav).click();
+        cy.get(selectors.getTitle).contains(text)
+          .then(() => {
+            cy.get(
+              `${selectors.child2}(3) > ${selectors.getTime}`).click();
+            cy.get(`${selectors.child2}(3) > ${selectors.child2}(7)`).click();
+            cy.get(selectors.acceptinButton).click();
+            cy.contains(selectors.messageAboutSelectedTickets).should("be.visible");
+          });
+      });
   });
 });

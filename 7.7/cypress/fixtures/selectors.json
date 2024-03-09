@@ -22,7 +22,11 @@
 
    "successfulAuthorization": "Администраторррская",
 
-  "errorMessage": "Ошибка авторизации"
+  "errorMessage": "Ошибка авторизации",
 
+  "getTime": ".movie-seances__hall > .movie-seances__list > .movie-seances__time-block > .movie-seances__time",
+
+  "getMovie": "[draggable='true'][data-film-id='119'] > .conf-step__movie-title",
   
+  "getTitle": ".movie__title"
 }
