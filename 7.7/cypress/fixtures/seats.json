@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Horizontal top",
+    "data": [
+      { "row": 1, "seat": 1 },
+      { "row": 1, "seat": 2 },
+      { "row": 1, "seat": 3 },
+      { "row": 1, "seat": 4 },
+      { "row": 1, "seat": 5 },
+      { "row": 1, "seat": 6 },
+      { "row": 1, "seat": 7 },
+      { "row": 1, "seat": 8 },
+      { "row": 1, "seat": 9 },
+      { "row": 1, "seat": 10 }
+    ]
+  },
+  {
+    "name": "Horizontal bottom",
+    "data": [
+      { "row": 11, "seat": 1 },
+      { "row": 11, "seat": 2 },
+      { "row": 11, "seat": 3 },
+      { "row": 11, "seat": 4 },
+      { "row": 11, "seat": 5 },
+      { "row": 11, "seat": 6 },
+      { "row": 11, "seat": 7 },
+      { "row": 11, "seat": 8 },
+      { "row": 11, "seat": 9 },
+      { "row": 11, "seat": 10 }
+    ]
+  },
+  {
+    "name": "Vertical left",
+    "data": [
+      { "row": 1, "seat": 1 },
+      { "row": 2, "seat": 1 },
+      { "row": 3, "seat": 1 },
+      { "row": 4, "seat": 1 },
+      { "row": 5, "seat": 1 },
+      { "row": 6, "seat": 1 },
+      { "row": 7, "seat": 1 },
+      { "row": 8, "seat": 1 },
+      { "row": 9, "seat": 1 },
+      { "row": 10, "seat": 1 },
+      { "row": 11, "seat": 1 }
+    ]
+  },
+  {
+    "name": "Vertical right",
+    "data": [
+      { "row": 1, "seat": 10 },
+      { "row": 2, "seat": 10 },
+      { "row": 3, "seat": 10 },
+      { "row": 4, "seat": 10 },
+      { "row": 5, "seat": 10 },
+      { "row": 6, "seat": 10 },
+      { "row": 7, "seat": 10 },
+      { "row": 8, "seat": 10 },
+      { "row": 9, "seat": 10 },
+      { "row": 10, "seat": 10 },
+      { "row": 11, "seat": 10 }
+    ]
+  },
+  {
+    "name": "Between",
+    "data": [
+      { "row": 2, "seat": 2 },
+      { "row": 2, "seat": 6 },
+      { "row": 2, "seat": 5 },
+      { "row": 2, "seat": 6 },
+      { "row": 2, "seat": 4 },
+      { "row": 3, "seat": 5 },
+      { "row": 4, "seat": 7 },
+      { "row": 5, "seat": 7 },
+      { "row": 10, "seat": 2 },
+      { "row": 6, "seat": 2 },
+      { "row": 6, "seat": 5 },
+      { "row": 6, "seat": 6 },
+      { "row": 7, "seat": 5 },
+      { "row": 7, "seat": 6 },
+      { "row": 8, "seat": 4 },
+      { "row": 8, "seat": 5 },
+      { "row": 9, "seat": 6 },
+      { "row": 9, "seat": 7 },
+      { "row": 10, "seat": 7 },
+      { "row": 10, "seat": 9 }
+    ]
+  }
+]
