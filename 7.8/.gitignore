@@ -1,0 +1,22 @@
+# repo
+/e2e/
+/node_modules/
+/Play/
+/tests-examples/
+users.js
+jenkins.war
+
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

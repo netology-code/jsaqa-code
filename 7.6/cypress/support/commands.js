@@ -10,8 +10,25 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
+ Cypress.Commands.add('login', (mail, password) => {
+    cy.contains("Log in").click();
+
+    if(mail) {
+        cy.get('#mail').type(mail);
+    }
+    if(password) {
+        cy.get('#pass').type(password);
+    }
+    cy.contains("Submit").click();
+   // cy.contains("Добро пожаловать " + mail).should("be.visible");
+    
+ })
+ Cypress.Commands.add('validationMessage', (mail, Message) => {
+    cy.get(mail)
+    .then((elem) => elem[0].validationMessage)
+    .should("contain", Message);
+ })
+// 
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
@@ -23,10 +40,3 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-Cypress.Commands.add("login", (login, password) => {
-  cy.contains("Log in").click();
-  cy.get("#mail").type(login);
-  cy.get("#pass").type(password);
-  cy.contains("Submit").click();
-});
