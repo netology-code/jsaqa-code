@@ -1,0 +1,6 @@
+
+.DS_Store
+coverage/
+node_modules/
+package-lock.json
+test/.DS_Store
