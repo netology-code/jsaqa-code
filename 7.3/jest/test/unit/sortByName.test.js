@@ -15,7 +15,7 @@ describe("Books names test suit", () => {
     ]);
   });
 });
-describe("Return 0", () => {
+describe("Books names test suit 2", () => {
   it("Books names should be sorted in ascending order 2", () => {
     expect(
       sorting.sortByName([
