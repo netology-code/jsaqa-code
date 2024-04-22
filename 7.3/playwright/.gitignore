@@ -1,5 +1,8 @@
 /node_modules/
-
+tests/user.js
+package-lock.json
+/test-results/
+.DS_Store
 
 .vscode/*
 !.vscode/settings.json
