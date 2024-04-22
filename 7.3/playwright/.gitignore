@@ -3,6 +3,9 @@ tests/user.js
 package-lock.json
 /test-results/
 .DS_Store
+tests-examples/
+e2e/
+package-lock.json/
 
 .vscode/*
 !.vscode/settings.json
@@ -13,3 +16,7 @@ package-lock.json
 
 # Local History for Visual Studio Code
 .history/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
