@@ -1,7 +1,5 @@
 /node_modules/
 
-tests/user.js
-package-lock.json
 
 .vscode/*
 !.vscode/settings.json
@@ -12,7 +10,3 @@ package-lock.json
 
 # Local History for Visual Studio Code
 .history/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
