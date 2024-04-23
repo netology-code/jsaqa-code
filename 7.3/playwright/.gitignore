@@ -1,11 +1,12 @@
 /node_modules/
-tests/user.js
+user.js
 package-lock.json
 /test-results/
 .DS_Store
 tests-examples/
 e2e/
 package-lock.json/
+playwright-report/
 
 .vscode/*
 !.vscode/settings.json
