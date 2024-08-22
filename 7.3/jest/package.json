@@ -4,8 +4,9 @@
   "description": "jest test",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
-  },
+    "test": "jest",
+    "test:coverage": "jest --collectCoverage"
+  }, 
   "keywords": [
     "jest",
     "test",
@@ -15,5 +16,22 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.3.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ],
+    "coverageThreshold": {
+        "global": {
+            "branches": 100,
+            "functions": 100,
+            "lines": 100
+        }
+    }
   }
 }
