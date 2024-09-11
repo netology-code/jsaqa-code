@@ -1,0 +1,20 @@
+{
+  "name": "7.6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:cinemaOne": "npx cypress run --record --key 3d786248-2aad-4b5c-9896-39e366c7fa40 --group cinemaOne --spec \"cypress/e2e/cinemaOne.cy.js\" --ci-build-id 7",
+    "test:cinemaTwo": "npx cypress run --record --key 3d786248-2aad-4b5c-9896-39e366c7fa40 --group cinemaTwo --spec \"cypress/e2e/cinemaTwo.cy.js\" --ci-build-id 7",
+    "test:parallel": "run-p -c test:cinemaOne test:cinemaTwo",
+
+    "start:key": "npx cypress run --record --key 3d786248-2aad-4b5c-9896-39e366c7fa40"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.6",
+    "npm-run-all": "^4.1.5"
+  }
+}

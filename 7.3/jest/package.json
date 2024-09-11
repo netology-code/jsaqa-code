@@ -4,14 +4,16 @@
   "description": "jest test",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch":"jest --watchAll",
+    "coverage": "jest --config jest.config.json --collectCoverage"
   },
   "keywords": [
     "jest",
     "test",
     "jsaqa"
   ],
-  "author": "omelnikova",
+  "author": "gluk2309",
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.3.1"

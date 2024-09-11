@@ -1,7 +1,7 @@
 module.exports = {
   clickElement: async function (page, selector) {
     try {
-      await page.waitForSelector(selector);
+      await page.waitForSelector(selector, { visible: true });
       await page.click(selector);
     } catch (error) {
       throw new Error(`Selector is not clickable: ${selector}`);
@@ -17,6 +17,7 @@ module.exports = {
   },
   putText: async function (page, selector, text) {
     try {
+      await page.waitForSelector(selector);
       const inputField = await page.$(selector);
       await inputField.focus();
       await inputField.type(text);

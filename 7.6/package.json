@@ -1,14 +1,28 @@
 {
-  "name": "cypress-test",
+  "name": "7.6",
   "version": "1.0.0",
-  "description": "first tests with Cypress",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "chrome:laptop": "npx cypress run --browser chrome --headed --config-file cypress.config.js",
+    "chrome:laptopHl": "npx cypress run --browser chrome --headless --config-file cypress.config.js",
+    "chrome:mobile": "npx cypress run --browser chrome --headed --config-file cypressmobile.js",
+    "chrome:mobileHl": "npx cypress run --browser chrome --headless --config-file cypressmobile.js",
+
+    "edge:laptop": "npx cypress run --browser edge --headed --config-file cypress.config.js",
+    "edge:laptopHl": "npx cypress run --browser edge --headless --config-file cypress.config.js",
+    "edge:mobile": "npx cypress run --browser edge --headed --config-file cypressmobile.js",
+    "edge:mobileHl": "npx cypress run --browser edge --headless --config-file cypressmobile.js",
+    
+    "electron:laptop": "npx cypress run --browser electron --headed --config-file cypress.config.js",
+    "electron:laptopHl": "npx cypress run --browser electron --headless --config-file cypress.config.js",
+    "electron:mobile": "npx cypress run --browser electron --headed --config-file cypressmobile.js",
+    "electron:mobileHl": "npx cypress run --browser electron --headless --config-file cypressmobile.js"
   },
-  "author": "OM",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^8.3.0"
+  "devDependencies": {
+    "cypress": "^13.6.6"
   }
 }

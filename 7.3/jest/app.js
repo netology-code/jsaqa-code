@@ -1,4 +1,5 @@
 function sortByName(inputArray) {
+  debugger;
   inputArray.sort(function (a, b) {
     var nameA = a.toLowerCase(),
       nameB = b.toLowerCase();

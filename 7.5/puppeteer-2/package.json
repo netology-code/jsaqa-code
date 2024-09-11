@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^27.3.1",
-    "jest-puppeteer": "^6.0.0",
-    "puppeteer": "^13.3.2",
     "chai": "^4.3.4",
-    "cucumber": "^7.0.0-rc.0"
+    "cucumber": "^6.0.7",
+    "puppeteer": "^22.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-puppeteer": "^10.0.1"
   }
 }

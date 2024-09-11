@@ -1,4 +1,8 @@
+/e2e/
 /node_modules/
+/Play/
+/tests-examples/
+user.js
 
 
 .vscode/*
@@ -10,3 +14,7 @@
 
 # Local History for Visual Studio Code
 .history/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
