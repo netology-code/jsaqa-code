@@ -1,22 +1,47 @@
-const { test, expect } = require("@playwright/test");
 
-test("test", async ({ page }) => {
-  // Go to https://netology.ru/free/management#/
-  await page.goto("https://netology.ru/free/management#/");
+const {test, expect } = require('@playwright/test');
+const formData = require('./user.js');
 
-  // Click a
-  await page.click("a");
-  await expect(page).toHaveURL("https://netology.ru/");
+test('testCorrectLogin', async ({page}) => {
+  await page.goto('https://netology.ru/');
 
-  // Click text=Учиться бесплатно
-  await page.click("text=Учиться бесплатно");
-  await expect(page).toHaveURL("https://netology.ru/free");
+  // Click text=Войти
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click('text=Войти')
+  ]);
 
-  page.click("text=Бизнес и управление");
+  // Fill email and password
+  await page.fill('[placeholder="Email"]', formData.username);
+  await page.fill('[placeholder="Пароль"]', formData.password);
 
-  // Click text=Как перенести своё дело в онлайн
-  await page.click("text=Как перенести своё дело в онлайн");
-  await expect(page).toHaveURL(
-    "https://netology.ru/programs/kak-perenesti-svoyo-delo-v-onlajn-bp"
-  );
+  // Click login button
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click('[data-testid="login-submit-btn"]')
+  ]);
+  await page.waitForTimeout(5000);
+  const title = await page.title();
+  expect(title).toBe('Мои программы обучения');
+
+});
+
+test("testIncorrectLogin", async ({page})=>{
+  await page.goto('https://netology.ru/');
+
+  // Click text=Войти
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click('text=Войти')
+  ]);
+
+  // Fill email and password
+  await page.fill('[placeholder="Email"]', "email@email.com");
+  await page.fill('[placeholder="Пароль"]', "Password");
+
+  // Click login button
+  await Promise.all([
+    page.click('[data-testid="login-submit-btn"]')
+  ]);
+  await expect(page.locator('[data-testid=login-error-hint]')).toBeVisible();
 });
