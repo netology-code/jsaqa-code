@@ -7,11 +7,17 @@ describe("Books names test suit", () => {
         "Гарри Поттер",
         "Властелин Колец",
         "Волшебник изумрудного города",
-      ])
+      ]),
     ).toEqual([
       "Властелин Колец",
       "Волшебник изумрудного города",
       "Гарри Поттер",
     ]);
   });
+});
+it("Books with identical names should not change order", () => {
+  expect(sorting.sortByName(["Гарри Поттер", "Гарри Поттер"])).toEqual([
+    "Гарри Поттер",
+    "Гарри Поттер",
+  ]);
 });
