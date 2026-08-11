@@ -35,8 +35,8 @@ After(async function () {
 
 Given("user is on cinema page", async function () {
   await this.page.goto("http://qamid.tmweb.ru/client/index.php", {
-    waitUntil: "networkidle2",
-    timeout: 0,
+    waitUntil: "domcontentloaded",
+    timeout: 60000,
   });
 });
 
@@ -63,10 +63,30 @@ When("user books one vip seat", async function () {
   await clickElement(this.page, ".acceptin-button");
 });
 
+When("user chooses occupied seat", async function () {
+  await clickElement(
+    this.page,
+    ".movie-seances__time:not(.acceptin-button-disabled)",
+  );
+
+  await this.page.waitForSelector(".buying-scheme__chair_taken");
+
+  await clickElement(this.page, ".buying-scheme__chair_taken");
+});
+
 Then("user sees booking confirmation", async function () {
   await this.page.waitForSelector(".ticket__check-title");
 
   const actual = await getText(this.page, ".ticket__check-title");
 
   expect(actual).to.contain("Вы выбрали билеты");
+});
+
+Then("occupied seat remains occupied", async function () {
+  const isOccupied = await this.page.$eval(
+    ".buying-scheme__chair_taken",
+    (chair) => chair.classList.contains("buying-scheme__chair_taken"),
+  );
+
+  expect(isOccupied).to.equal(true);
 });

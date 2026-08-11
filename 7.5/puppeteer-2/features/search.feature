@@ -5,7 +5,12 @@ Feature: Movie ticket booking
     When user books one standard seat
     Then user sees booking confirmation
 
-Scenario: Book one vip seat
+  Scenario: Book one vip seat
     Given user is on cinema page
     When user books one vip seat
     Then user sees booking confirmation
+
+  Scenario: User cannot book occupied seat
+    Given user is on cinema page
+    When user chooses occupied seat
+    Then occupied seat remains occupied
